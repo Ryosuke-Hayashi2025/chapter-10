@@ -3,8 +3,8 @@
 
 import React from "react";
 import { useParams } from "next/navigation";
-import styles from "../../../styles/Detail.module.css";
-import { Post } from "../../../types/post";
+import styles from "./_styles/Detail.module.css";
+import { Post } from "../../_types/post";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 

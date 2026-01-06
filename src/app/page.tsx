@@ -2,9 +2,9 @@
 "use client";
 
 import React from "react";
-import styles from "../styles/Home.module.css";
+import styles from "./_styles/Home.module.css";
 import Link from "next/link";
-import { Post } from "../types/post";
+import { Post } from "./_types/post";
 import { useState, useEffect } from "react";
 
 const Home = () => {

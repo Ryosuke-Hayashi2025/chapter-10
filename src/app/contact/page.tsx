@@ -1,9 +1,9 @@
 // app/contact/page.tsx
 "use client";
 
-import { ContactInput } from "../../types/contactInput";
+import { ContactInput } from "./_types/contactInput";
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import styles from "../../styles/Contact.module.css";
+import styles from "./_styles/Contact.module.css";
 
 const Contact = () => {
   const [form, setForm] = useState<ContactInput>({
