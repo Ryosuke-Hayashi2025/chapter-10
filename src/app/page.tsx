@@ -4,20 +4,23 @@
 import React from "react";
 import styles from "./_styles/Home.module.css";
 import Link from "next/link";
-import { Post } from "./_types/post";
+import { MicroCmsPost } from "./_types/MicroCmsPost";
 import { useState, useEffect } from "react";
 
 const Home = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<MicroCmsPost[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetcher = async () => {
-      const res = await fetch(
-        "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts"
-      );
-      const data = await res.json();
-      setPosts(data.posts);
+      const res = await fetch("https://q84h2qjhgn.microcms.io/api/v1/posts", {
+        headers: {
+          "X-MICROCMS-API-KEY": process.env
+            .NEXT_PUBLIC_MICROCMS_API_KEY as string,
+        },
+      });
+      const { contents } = await res.json();
+      setPosts(contents);
       setIsLoading(false);
     };
 
@@ -41,8 +44,8 @@ const Home = () => {
                 <ul className={styles.Categories}>
                   {elem.categories.map((category) => {
                     return (
-                      <li className={styles.Category} key={category}>
-                        {category}
+                      <li className={styles.Category} key={category.id}>
+                        {category.name}
                       </li>
                     );
                   })}

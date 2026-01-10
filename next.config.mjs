@@ -10,6 +10,7 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      { protocol: "https", hostname: "images.microcms-assets.io" },
     ],
   },
 };
