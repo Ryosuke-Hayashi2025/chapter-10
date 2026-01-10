@@ -4,24 +4,31 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import styles from "./_styles/Detail.module.css";
-import { Post } from "../../_types/post";
+import { MicroCmsPost } from "../../_types/MicroCmsPost";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const Detail = () => {
   const { id } = useParams<{ id: string }>();
 
-  const [post, setPost] = useState<Post | null>(null);
+  const [post, setPost] = useState<MicroCmsPost | null>(null);
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetcher = async () => {
+      setIsLoading(true);
       const res = await fetch(
-        `https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`
+        `https://q84h2qjhgn.microcms.io/api/v1/posts/${id}`,
+        {
+          headers: {
+            "X-MICROCMS-API-KEY": process.env
+              .NEXT_PUBLIC_MICROCMS_API_KEY as string,
+          },
+        }
       );
       const data = await res.json();
-      setPost(data.post);
+      setPost(data);
       setIsLoading(false);
     };
 
@@ -43,7 +50,7 @@ const Detail = () => {
           <Image
             height={400}
             width={800}
-            src={post.thumbnailUrl}
+            src={post.thumbnail.url}
             alt="記事画像"
           />
           <div className={styles.Tag}>
@@ -53,8 +60,8 @@ const Detail = () => {
             <ul className={styles.Categories}>
               {post.categories.map((category) => {
                 return (
-                  <li className={styles.Category} key={category}>
-                    {category}
+                  <li className={styles.Category} key={category.id}>
+                    {category.name}
                   </li>
                 );
               })}
