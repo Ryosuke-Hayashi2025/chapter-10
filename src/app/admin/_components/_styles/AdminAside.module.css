@@ -1,0 +1,30 @@
+/* AdminAside.module.css */
+
+.aside {
+  width: 200px;
+  background-color: #f9f9f9;
+  padding: 16px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 20px;
+}
+
+.menu a {
+  display: block;
+  padding: 16px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.menu a:hover {
+  background-color: #e0f0ff;
+}

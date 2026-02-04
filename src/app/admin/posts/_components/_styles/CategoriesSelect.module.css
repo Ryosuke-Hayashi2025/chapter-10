@@ -1,0 +1,38 @@
+/* app/admin/posts/_componets/_styles/CategoriesSelect.module.css*/
+
+.Container {
+  width: 100%;
+}
+
+.ButtonWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.CategoryButton {
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.CategoryButton:hover {
+  opacity: 0.8;
+}
+
+.Selected {
+  border-color: #2563eb;
+  background-color: #2563eb;
+  color: white;
+}
+
+.Unselected {
+  border-color: #d1d5db;
+  background-color: white;
+  color: #1f2937;
+}

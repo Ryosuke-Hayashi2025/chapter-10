@@ -1,0 +1,49 @@
+/* AdminHome.module.css */
+
+.Wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Block {
+  border-bottom: 1px solid #ccc;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.Block a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.Block a:hover {
+  background-color: #f9f9f9;
+}
+
+.Title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.PostTitle {
+  font-weight: bold;
+}
+
+.NewButton {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.NewButton:hover {
+  background-color: #1d4ed8;
+}
