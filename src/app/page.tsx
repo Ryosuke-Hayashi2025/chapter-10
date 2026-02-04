@@ -4,23 +4,19 @@
 import React from "react";
 import styles from "./_styles/Home.module.css";
 import Link from "next/link";
-import { MicroCmsPost } from "./_types/MicroCmsPost";
+import { PublicPost } from "./_types/PublicPost";
 import { useState, useEffect } from "react";
 
 const Home = () => {
-  const [posts, setPosts] = useState<MicroCmsPost[]>([]);
+  const [posts, setPosts] = useState<PublicPost[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetcher = async () => {
-      const res = await fetch("https://q84h2qjhgn.microcms.io/api/v1/posts", {
-        headers: {
-          "X-MICROCMS-API-KEY": process.env
-            .NEXT_PUBLIC_MICROCMS_API_KEY as string,
-        },
-      });
-      const { contents } = await res.json();
-      setPosts(contents);
+      const res = await fetch("/api/posts");
+      const { posts } = await res.json();
+      setPosts(posts);
+
       setIsLoading(false);
     };
 
@@ -42,10 +38,13 @@ const Home = () => {
                   {new Date(elem.createdAt).toLocaleDateString("ja-JP")}
                 </div>
                 <ul className={styles.Categories}>
-                  {elem.categories.map((category) => {
+                  {elem.postCategories.map((postCategory) => {
                     return (
-                      <li className={styles.Category} key={category.id}>
-                        {category.name}
+                      <li
+                        className={styles.Category}
+                        key={postCategory.category.id}
+                      >
+                        {postCategory.category.name}
                       </li>
                     );
                   })}

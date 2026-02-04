@@ -1,0 +1,54 @@
+/* app/admin/posts/_componets/_styles/PostForm.module.css*/
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.Input {
+  margin-top: 4px;
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.ButtonRow {
+  display: flex;
+}
+
+.ButtonUpdate {
+  padding: 8px 16px;
+  margin-right: 8px;
+  background: #4f46e5;
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  width: auto;
+  align-self: flex-start;
+}
+
+.ButtonUpdate:hover {
+  background: #4338ca;
+}
+
+.ButtonDelete {
+  padding: 8px 16px;
+  background: #dc2626;
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  width: auto;
+  align-self: flex-start;
+}
+
+.ButtonDelete:hover {
+  background: #b91c1c;
+}
