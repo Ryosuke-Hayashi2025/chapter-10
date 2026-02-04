@@ -5,10 +5,10 @@
 import Link from "next/link";
 import styles from "./_styles/AdminHome.module.css";
 import { useState, useEffect } from "react";
-import { PostIndexResponse } from "@/app/api/admin/posts/route";
+import { PostsIndexResponse } from "./_types/PostsIndexResponse";
 
 export default function AdminPostsHome() {
-  const [posts, setPosts] = useState<PostIndexResponse["posts"]>([]);
+  const [posts, setPosts] = useState<PostsIndexResponse["posts"]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {

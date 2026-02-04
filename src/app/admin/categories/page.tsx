@@ -5,7 +5,7 @@
 import Link from "next/link";
 import styles from "../posts/_styles/AdminHome.module.css";
 import { useState, useEffect } from "react";
-import { CategoriesIndexResponse } from "@/app/api/admin/categories/route";
+import { CategoriesIndexResponse } from "./_types/CategoriesIndexResponse";
 
 export default function AdminCategoriesHome() {
   const [categories, setCategories] = useState<

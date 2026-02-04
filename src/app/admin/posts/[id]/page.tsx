@@ -7,9 +7,9 @@ import { useParams, useRouter } from "next/navigation";
 import { PostForm } from "../_components/PostForm";
 import {
   Category,
-  PostShowResponse,
   UpdatePostRequestBody,
 } from "@/app/api/admin/posts/[id]/route";
+import { PostShowResponse } from "./_types/PostShowResponse";
 
 export default function AdminEditPost() {
   const [title, setTitle] = useState("");

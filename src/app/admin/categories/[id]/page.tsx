@@ -5,10 +5,8 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { CategoryForm } from "../_components/CategoryForm";
-import {
-  CategoryShowResponse,
-  UpdateCategoryRequestBody,
-} from "@/app/api/admin/categories/[id]/route";
+import { UpdateCategoryRequestBody } from "@/app/api/admin/categories/[id]/route";
+import { CategoryShowResponse } from "./_types/CategoryShowResponse";
 
 export default function AdminEditCategory() {
   const [name, setName] = useState("");
